@@ -1,0 +1,238 @@
+:root {
+    --mg-top-05: 0.5rem 0 0 0;
+    --mg-bt-15: 0 0 1.5rem 0;
+    --pd-tp-lf-rg-1: 1rem 1rem 0 1rem;
+
+    --deg-25: 25deg;
+    --deg-173: 173deg;
+    --language-level-deg: 90deg;
+
+    --background-color:#FBC4AB;
+    --label-color: #E5989B;
+    --item-color: #F7EDE2;
+    --icon-color: #9c6f78;
+    --gen-intro-top-color:#B5838D;
+    --gen-intro-bt-color:#FFE5D9;
+    --language-color:#FFB4A2;
+    
+    --language-level-percent: 100%;
+}  
+
+body{
+    margin: 0;
+    color:#2b282f;
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin: 2rem 0 2rem 0;
+    /* color: #fff; */
+}
+
+h2{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+h3{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+h4{
+    text-transform: uppercase;
+    margin: 1rem 0 0 0;
+}
+
+p{
+    margin: var(--mg-top-05);
+}
+
+/* Introduction and general information */
+
+.container{
+    display: flex;
+    flex-wrap:wrap;
+    background: var(--background-color);
+}
+
+.general-intro{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--gen-intro-bt-color);
+}
+
+.profile{
+    background: linear-gradient(var(--deg-173) , var(--gen-intro-top-color) 88%, transparent 0%);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.photo{
+    align-self: center;
+}
+
+.photo img{
+    width: 225px;
+    border-radius: 50%;
+}
+
+.contacts-about{
+    display: flex;
+    flex-direction: column;
+}
+
+.about{
+    margin: var(--mg-bt-15);
+    padding: var(--pd-tp-lf-rg-1);
+}
+
+.contacts{
+    padding: 0.5rem 1rem 0 1rem;
+    margin-bottom: 2rem;
+}
+
+.row{
+    margin: 1rem 0 1rem 0;
+    display: flex;
+}
+
+.row .fa {
+    font-size: 1rem;
+    align-self: center;
+    margin-right: 0.5rem;
+    color: var(--icon-color);
+}
+
+/* Detailed information */
+
+.detailed-intro{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    margin: var(--mg-bt-15);
+    padding: var(--pd-tp-lf-rg-1);
+    background: var(--background-color);
+}
+
+.detailed-intro h2{
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    margin: 0.5rem 0 0.5rem 0;
+    background: linear-gradient(var(--deg-25), var(--label-color) 50%, transparent 0%);
+}
+
+.listing{
+    padding: 0;
+}
+
+.item{
+    padding: 1rem;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 30%);
+    background: var(--item-color);
+    margin: 0.5rem;
+}
+
+#toggleDesc{
+    padding-left: 0.5rem;
+}
+
+#toggleDesc:hover{
+    cursor: pointer;
+    color: var(--icon-color);
+}
+
+.img-flexbox{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.img-item {
+    margin: 0.5rem;
+}
+
+.img-item img{
+    width: 100px;
+}
+
+.languages{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.language{
+    width: 100px;
+    height: 100px;
+    margin: 0.5rem;
+    border: double 0.5rem transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(var(--language-level-deg), var(--language-color) var(--language-level-percent), transparent 0%), 
+                        linear-gradient(to right, #800F2F, #FF758F);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.language p{
+    margin: 0;
+    text-align:center;
+    vertical-align: middle;
+    line-height: 100px; 
+    text-transform: uppercase;
+}
+
+.language:hover{
+    box-shadow: 0.5em 0 .7em #F28585, -0.5em  0 .7em #F28585;
+}
+
+.item-desc{
+    text-align: center;
+    background: var(--item-color);
+    border-radius: 5px;
+    margin: var(--mg-top-05);
+    padding: 0.2rem;
+    box-shadow: 5px 5px 5px rgb(0 0 0 / 20%);
+    text-transform: uppercase;
+}
+
+@media (max-width: 767px){
+    .container{
+        flex-direction: column;
+    }
+
+    .profile{
+        background: linear-gradient(var(--deg-173) , var(--gen-intro-top-color) 100%, transparent 0%);
+        align-items: center;
+    }
+
+    .contacts-about{
+        align-items: center;
+        text-align: center;
+    }
+
+    .detailed-intro h2{
+        background: linear-gradient(0 , var(--label-color) 100%, transparent 0%);
+    }
+
+    .img-flexbox{
+        justify-content: center;
+    }
+
+    .languages{
+        justify-content: center;
+    }
+
+    .row{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 280px){
+    .row .fa {
+        align-self:auto;
+    }    
+}
